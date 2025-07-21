@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hz Healing Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🔊 Healing Frequencies</h1>
+        </header>
+
+        <div class="controls">
+            <label>
+                Frequency:
+                <select id="freq">
+                    <option>396</option>
+                    <option selected>432</option>
+                    <option>528</option>
+                    <option>639</option>
+                </select>
+            </label>
+            <button id="load">Load Tracks</button>
+        </div>
+
+        <div id="playlist" class="playlist"></div>
+    </div>
+
+    <script>
+        document.getElementById('load').onclick = async () => {
+            const freq = document.getElementById('freq').value;
+            const res = await fetch(`/api/healing?freq=${freq}`);
+            const vids = await res.json();
+            const container = document.getElementById('playlist');
+            container.innerHTML = '';
+            vids.forEach(v => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                card.innerHTML = `
+          <h3>${v.title}</h3>
+          <iframe src="https://www.youtube.com/embed/${v.id}"
+                  allowfullscreen>
+          </iframe>`;
+                container.appendChild(card);
+            });
+        };
+    </script>
+</body>
+
+</html>
