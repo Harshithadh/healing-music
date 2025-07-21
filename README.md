@@ -2,7 +2,8 @@
 
 Welcome to **Healing Music**, a web-based music therapy experience that helps you relax, focus, and heal through scientifically tuned frequencies and soothing visuals. 🧘‍♀️🎧
 
-![healing-music-banner](https://user-images.githubusercontent.com/your-banner-image-url.png)
+💖 Motivation
+This project was inspired by the idea that music has the power to heal the mind and body. By tuning into specific frequencies, we aim to create a relaxing digital space for mindfulness and well-being.
 
 ---
 
@@ -17,13 +18,25 @@ Welcome to **Healing Music**, a web-based music therapy experience that helps yo
 
 ---
 
+🧠 Learn More
+Solfeggio Frequencies Explained
+
+Music Therapy Research
+
 ## 📸 Preview
 
 > A quick look at the interface (add screenshots here if available)
 
-![Preview Screenshot](https://user-images.githubusercontent.com/your-screenshot.png)
+![Preview Screenshot]<img width="1903" height="869" alt="image" src="https://github.com/user-attachments/assets/7885cb97-b6a5-41a7-a5c0-978af7420ecb" />
+
 
 ---
+🛠️ Tech Stack
+Frontend: HTML, CSS
+
+Backend: Node.js (Express)
+
+Version Control: Git + GitHub
 
 ## 🚀 Getting Started
 
@@ -38,3 +51,4 @@ cd healing-music
 npm install
 node server.js
 # healing-music
+
