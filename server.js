@@ -3,9 +3,11 @@ const express = require('express');
 const axios = require('axios');
 require('dotenv').config();
 
+
 const app = express();
 const PORT = process.env.PORT || 3000;
-const API_KEY = process.env.YT_API_KEY;
+const apiKey = process.env.YT_API_KEY;
+
 
 // Serve static assets from /public
 app.use(express.static('public'));
