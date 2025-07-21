@@ -32,30 +32,25 @@
     <script>
         document.getElementById('load').onclick = async () => {
             const freq = document.getElementById('freq').value;
-
             try {
-                const response = await fetch(`/api/healing?freq=${freq}`);
-                const vids = await response.json();
-
+                const res = await fetch(`/api/healing?freq=${freq}`);
+                const vids = await res.json();
                 const container = document.getElementById('playlist');
                 container.innerHTML = '';
-
                 vids.forEach(v => {
                     const card = document.createElement('div');
                     card.className = 'video-card';
                     card.innerHTML = `
                     <h3>${v.title}</h3>
-                    <iframe src="https://www.youtube.com/embed/${v.id}"
-                            allowfullscreen>
-                    </iframe>`;
+                    <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen></iframe>
+                `;
                     container.appendChild(card);
                 });
-            } catch (err) {
-                console.error("Failed to load videos", err);
+            } catch (e) {
+                console.error("Error loading videos", e);
             }
         };
     </script>
-
 </body>
 
 </html>
