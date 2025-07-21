@@ -25,9 +25,8 @@ Music Therapy Research
 
 ## 📸 Preview
 
-> A quick look at the interface (add screenshots here if available)
 
-![Preview Screenshot]<img width="1903" height="869" alt="image" src="https://github.com/user-attachments/assets/7885cb97-b6a5-41a7-a5c0-978af7420ecb" />
+<img width="1903" height="869" alt="image" src="https://github.com/user-attachments/assets/7885cb97-b6a5-41a7-a5c0-978af7420ecb" />
 
 
 ---
