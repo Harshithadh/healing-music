@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 :root {
-    --bg-start: #e0eafc;
-    --bg-end: #cfdef3;
-    --card-bg: #ffffff;
-    --text: #333;
-    --accent: #5a67d8;
-    --radius: 10px;
+    --bg-overlay: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text: #2c3e50;
+    --accent: #4caf50;
+    /* soft green */
+    --radius: 12px;
     --gap: 1rem;
 }
 
@@ -20,8 +20,8 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    /* subtle vertical gradient */
-    background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
@@ -32,6 +32,9 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 2rem 1rem;
+    background-color: var(--bg-overlay);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -44,7 +47,23 @@ header h1 {
     font-size: 2.75rem;
     color: var(--accent);
     margin-bottom: 0.25rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+nav a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #2e7d32;
+    background: #c8e6c9;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background: #a5d6a7;
 }
 
 /* Controls */
@@ -54,6 +73,7 @@ header h1 {
     align-items: center;
     gap: var(--gap);
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .controls select,
@@ -73,7 +93,7 @@ header h1 {
 }
 
 .controls button:hover {
-    background: #4c51bf;
+    background: #388e3c;
 }
 
 /* Grid of cards */
@@ -87,10 +107,15 @@ header h1 {
 .video-card {
     background: var(--card-bg);
     border-radius: var(--radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.02);
 }
 
 .video-card h3 {
@@ -98,10 +123,10 @@ header h1 {
     font-size: 1rem;
     font-weight: 600;
     flex-shrink: 0;
+    color: #2c3e50;
 }
 
 .video-card iframe {
-    /* fill remaining space, keep 16:9 */
     width: 100%;
     aspect-ratio: 16/9;
     border: none;

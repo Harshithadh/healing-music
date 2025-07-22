@@ -11,6 +11,9 @@
     <div class="container">
         <header>
             <h1>🔊 Healing Frequencies</h1>
+            <nav>
+                <a href="frequencies.html">Learn About Frequencies</a>
+            </nav>
         </header>
 
         <div class="controls">
@@ -40,10 +43,9 @@
                 const card = document.createElement('div');
                 card.className = 'video-card';
                 card.innerHTML = `
-                <h3>${v.title}</h3>
-                <iframe src="https://www.youtube.com/embed/${v.id}"
-                        allowfullscreen>
-                </iframe>`;
+                    <h3>${v.title}</h3>
+                    <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen></iframe>
+                `;
                 container.appendChild(card);
             });
         };
